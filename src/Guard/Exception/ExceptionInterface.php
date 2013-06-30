@@ -8,6 +8,9 @@
 
 namespace Guard\Exception;
 
+/**
+ * Exception interface for all exceptions thrown by conditions.
+ */
 interface ExceptionInterface
 {
 }
