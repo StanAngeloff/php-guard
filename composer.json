@@ -1,5 +1,5 @@
 {
-  "name": "StanAngeloff/guard",
+  "name": "stan-angeloff/guard",
   "version": "0.0.1-dev",
   "description": "Safe-conducts for your PHP. Kills up to 99.9% of bad arguments.",
   "keywords": ["guard", "conditions"],
