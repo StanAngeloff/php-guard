@@ -9,6 +9,7 @@
     <whitelist processUncoveredFilesFromWhitelist="true">
       <directory>src/Guard/</directory>
       <exclude>
+        <directory>src/Guard/Exception/</directory>
         <directory>src/Guard/Tests/</directory>
       </exclude>
     </whitelist>
