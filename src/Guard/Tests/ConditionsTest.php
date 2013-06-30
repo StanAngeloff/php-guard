@@ -132,4 +132,20 @@ final class ConditionsTest extends \PHPUnit_Framework_TestCase
         }
         $this->fail('expect exception to be raised');
     }
+
+    public function testConditionsAreChainable()
+    {
+        Conditions::addTemplate('Guard\\Tests\\Fixtures\\Condition\\{name}Condition');
+        $condition = Conditions::requires('value', 'argument');
+        $this->assertSame(
+            $condition,
+            $condition->noOperation(),
+            'expect conditions to be chainable'
+        );
+        $this->assertSame(
+            $condition,
+            $condition->noOperation()->noOperation(),
+            'expect conditions to be chainable multiple times'
+        );
+    }
 }
