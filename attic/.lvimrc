@@ -1,0 +1,41 @@
+set tabstop=4      " Default number of spaces per tab character.
+set softtabstop=4  " Tab size during editing operation.
+set shiftwidth=4   " Default tab size.
+set noexpandtab
+
+" Set up Syntastic to lint files on save.
+let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': ['json', 'php'], 'passive_filetypes': [] }
+
+let g:syntastic_json_checkers=['jsonlint']
+
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+let g:syntastic_php_phpcs_args='--report=csv --encoding=utf-8 --standard=PSR2'
+let g:syntastic_php_phpmd_post_args='text codesize,design,naming,unusedcode'
+
+" Run a command on <F5> expanding any '%:' Vim markers.
+if ! exists('g:runCommand')
+  " The default command is to run PHPUnit.
+  let g:runCommand='bin/phpunit --coverage-html ./.coverage'
+endif
+if  ! exists('g:runCommandTarget')
+  " The tmux target where the command will be run.
+  " Be careful not to execute it in the same panel as Vim.
+  let g:runCommandTarget='default.2'
+endif
+
+function! s:RunCommand()
+  call system(
+        \ 'tmux send-keys -t "' . g:runCommandTarget . '" "q" "^C" "^U" "^L" "Space" " ( ' . 
+        \ substitute(g:runCommand, '\v\%(:[^[:space:]]+)', '\=shellescape(expand(submatch(0)))', 'g') . 
+        \ ' ) " "Enter"'
+        \ )
+endfunction
+
+nnoremap <silent> <F5>      :w<CR>:call <SID>RunCommand()<CR>
+inoremap <silent> <F5> <Esc>:w<CR>:call <SID>RunCommand()<CR>a
+
+" Reload this file on save.
+augroup reloadLocalConfiguration
+  au!
+  au BufWritePost .lvimrc source %
+augroup END

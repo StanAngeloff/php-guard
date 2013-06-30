@@ -1,0 +1,4 @@
+.tags
+/.coverage/
+/bin/
+/vendor/php/

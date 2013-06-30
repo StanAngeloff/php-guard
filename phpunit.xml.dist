@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpunit colors="true">
+  <testsuites>
+    <testsuite name="Guard">
+      <directory suffix="Test.php">src/</directory>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory>src/Guard/</directory>
+      <exclude>
+        <directory>src/Guard/Tests/</directory>
+      </exclude>
+    </whitelist>
+  </filter>
+</phpunit>

@@ -1,0 +1,31 @@
+{
+  "name": "StanAngeloff/guard",
+  "version": "0.0.1-dev",
+  "description": "Safe-conducts for your PHP. Kills up to 99.9% of bad arguments.",
+  "keywords": ["guard", "conditions"],
+  "license": "AGPLv3",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Stan Angeloff",
+      "email": "stanimir@angeloff.name",
+      "homepage": "http://blog.angeloff.name",
+      "role": "Author"
+    }
+  ],
+  "require": {
+    "php": ">=5.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "3.8.*@dev"
+  },
+  "autoload": {
+    "psr-0": {
+      "Guard\\": "src/"
+    }
+  },
+  "config": {
+    "vendor-dir": "vendor/php",
+    "bin-dir": "bin"
+  }
+}
