@@ -13,7 +13,7 @@ use Guard\Condition\TypeOfCondition;
 final class TypeOfConditionTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @expectedException Guard\Exception\InvalidArgumentException
+     * @expectedException Guard\Exception\DomainException
      * @expectedExceptionMessage expected to be of type "integer", got "string" instead
      * @expectedExceptionCode 1372604324
      */

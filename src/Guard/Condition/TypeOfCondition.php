@@ -8,7 +8,7 @@
 
 namespace Guard\Condition;
 
-use Guard\Exception\InvalidArgumentException;
+use Guard\Exception\DomainException;
 use Guard\Utility\DumpUtility;
 
 class TypeOfCondition implements ConditionInterface
@@ -18,7 +18,7 @@ class TypeOfCondition implements ConditionInterface
     {
         $actual = gettype($value);
         if (strcasecmp($actual, $type) !== 0) {
-            throw new InvalidArgumentException(
+            throw new DomainException(
                 strtr(
                     'The value "{value}" is expected to be of type "{type}", got "{actual}" instead.',
                     array(
