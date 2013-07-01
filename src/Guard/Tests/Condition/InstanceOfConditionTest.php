@@ -8,6 +8,7 @@
 
 namespace Guard\Tests\Condition;
 
+use Guard\Tests\Fixtures\FixedStringContainer;
 use Guard\Tests\Fixtures\StringContainer;
 
 use Guard\Condition\InstanceOfCondition;
@@ -55,6 +56,14 @@ final class InstanceOfConditionTest extends \PHPUnit_Framework_TestCase
         $this->newCondition()->evaluate(
             new StringContainer('string'),
             'Guard\\Tests\\Fixtures\\StringContainer'
+        );
+        $this->newCondition()->evaluate(
+            new FixedStringContainer(),
+            'Guard\\Tests\\Fixtures\\StringContainer'
+        );
+        $this->newCondition()->evaluate(
+            new FixedStringContainer(),
+            'Guard\\Tests\\Fixtures\\StringContainerInterface'
         );
     }
 

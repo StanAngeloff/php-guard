@@ -8,7 +8,10 @@
 
 namespace Guard\Tests\Fixtures;
 
-class StringContainer
+/**
+ * A class used to test the DumpUtility.
+ */
+class StringContainer implements StringContainerInterface
 {
     private $value;
 
