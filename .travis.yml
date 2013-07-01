@@ -7,5 +7,6 @@ php:
 
 before_script:
   - make install
+  - php bin/composer.phar install --dev
 
 script: bin/phpunit --coverage-text
