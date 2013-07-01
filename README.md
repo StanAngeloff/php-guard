@@ -1,6 +1,8 @@
 Guard
 =====
 
+[![Build Status](https://secure.travis-ci.org/StanAngeloff/php-guard.png?branch=master)](http://travis-ci.org/StanAngeloff/php-guard)
+
 Safe-conducts for your PHP. Kills up to 99.9% of bad arguments.
 
 **WIP**.
