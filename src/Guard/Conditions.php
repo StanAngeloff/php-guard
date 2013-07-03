@@ -16,7 +16,7 @@ use Guard\Exception\NoSuchConditionException;
 /**
  * @SuppressWarnings(PHPMD.LongVariableNames)
  */
-class Conditions
+class Conditions implements ConditionEvaluatorInterface
 {
     /**
      * A list of cached condition class instances by name.
@@ -164,8 +164,18 @@ class Conditions
      * @return self
      *
      * @throws \Exception If the condition fails.
+     *
+     * @see ConditionEvaluatorInterface::evaluateCondition()
      */
     public function __call($name, array $arguments)
+    {
+        return $this->evaluateCondition($name, $arguments);
+    }
+
+    # {{{ ConditionEvaluatorInterface
+
+    /** {@inheritdoc} */
+    public function evaluateCondition($name, array $arguments = array())
     {
         $condition = $this->createCondition($name);
         try {
@@ -191,6 +201,8 @@ class Conditions
         }
         return $this;
     }
+
+    # }}}
 
     /**
      * Create a condition class instance by name.
