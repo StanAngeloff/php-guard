@@ -146,12 +146,11 @@ class Conditions implements ConditionEvaluatorInterface
      * Set argument name.
      *
      * @param string $argumentName
-     * @return self
+     * @return void
      */
     public function setArgumentName($argumentName)
     {
         $this->argumentName = $argumentName;
-        return $this;
     }
 
     # }}}
