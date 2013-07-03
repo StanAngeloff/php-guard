@@ -232,6 +232,9 @@ class Conditions implements ConditionEvaluatorInterface
                     1372596698
                 );
             }
+            if ($condition instanceof ConditionEvaluatorContainerInterface) {
+                $condition->setConditionEvaluator($this);
+            }
             self::$conditions[$name] = $condition;
             return $condition;
         }
