@@ -1,4 +1,4 @@
 # php-coveralls configuration:
-src_dir: '../../src/'
-coverage_clover: '.coverage/php-guard.xml'
-json_path: '.coverage/php-guard-upload.json'
+src_dir: '../src/'
+coverage_clover: '../.coverage/php-guard.xml'
+json_path: '../.coverage/php-guard-upload.json'
