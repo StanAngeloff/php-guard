@@ -1,7 +1,7 @@
 Guard
 =====
 
-[![Build Status](https://secure.travis-ci.org/StanAngeloff/php-guard.png?branch=master)](http://travis-ci.org/StanAngeloff/php-guard)
+[![Build Status](https://secure.travis-ci.org/StanAngeloff/php-guard.png?branch=master)](http://travis-ci.org/StanAngeloff/php-guard) [![Coverage Status](https://coveralls.io/repos/StanAngeloff/php-guard/badge.png?branch=master)](https://coveralls.io/r/StanAngeloff/php-guard?branch=master)
 
 Safe-conducts for your PHP. Kills up to 99.9% of bad arguments.
 
