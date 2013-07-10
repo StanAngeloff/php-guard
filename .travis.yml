@@ -6,6 +6,10 @@ php:
 
 before_script:
   - make install
-  - php bin/composer.phar install --dev
+  - bin/composer.phar install --dev
+  - mkdir .coverage/
 
-script: bin/phpunit --coverage-text
+script: bin/phpunit
+
+after_script:
+  - bin/coveralls
