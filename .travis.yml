@@ -7,9 +7,9 @@ php:
 before_script:
   - make install
   - bin/composer.phar install --dev
-  - mkdir .coverage/
+  - mkdir '.coverage/'
 
 script: bin/phpunit
 
 after_script:
-  - bin/coveralls
+  - bin/coveralls -c '../.coveralls.yml'
